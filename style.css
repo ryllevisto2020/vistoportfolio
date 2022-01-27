@@ -1,0 +1,203 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) 0.9fr 1.1fr 1fr;
+  grid-template-rows: 0.4fr 1.6fr 1fr 1.4fr 0.6fr;
+  gap: 17px 17px;
+  grid-template-areas:
+    "NAVIGATION NAVIGATION NAVIGATION NAVIGATION NAVIGATION NAVIGATION"
+    "SLIDESHOW SLIDESHOW SLIDESHOW SLIDESHOW SLIDESHOW SLIDESHOW"
+    "CONTEXT CONTEXT DATA DATA DATA DATA"
+    "CONTEXT CONTEXT DATA DATA DATA DATA"
+    "FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER";
+}
+
+.NAVIGATION { grid-area: NAVIGATION; }
+
+.SLIDESHOW { grid-area: SLIDESHOW; }
+
+.CONTEXT { grid-area: CONTEXT; }
+
+.DATA { grid-area: DATA; }
+
+.FOOTER { grid-area: FOOTER; }
+
+@media all and (-ms-high-contrast:none) {
+  .grid-container {
+    display: -ms-grid;
+    -ms-grid-columns: repeat(3, 1fr) 0.9fr 1.1fr 1fr;
+    -ms-grid-rows: 0.4fr 1.6fr 1fr 1.4fr 0.6fr;
+  }
+
+  .NAVIGATION {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 6;
+  }
+
+  .SLIDESHOW {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 6;
+  }
+
+  .CONTEXT {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+
+  .DATA {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 4;
+  }
+
+  .FOOTER {
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 6;
+  }
+}
+
+.unordered-list{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.unordered-list li{
+  display: inline;
+}
+
+.unordered-list a{
+  font-size: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-decoration: none;
+  color: white;
+}
+
+.NAVIGATION{
+  padding-top: 20px;
+  padding-bottom: 10px;
+  background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+}
+
+.SLIDESHOW{
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  background-color: pink;
+  height: 300px;
+}
+
+body{
+  margin: 10px 100px 10px 100px;
+  background-image: url("https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?size=626&ext=jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.slider{
+  background: red;
+  margin: 10px;
+  height: 280px;
+    /* width: 800px; */
+    /* height: 500px; */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.slides{
+  display: flex;
+  width: 500px;
+  height: 500px;
+}
+
+.slides input{
+  display:none;
+}
+
+.slide{
+  width: 400%;
+  transition: 2s;
+}
+
+.slide img{
+  width: 1046px;
+  height: 500px;
+
+}
+
+.navigation-manual{
+  position:absolute;
+  width:800px;
+  margin-top: -40px;
+  display:flex;
+  justify-content:center;
+}
+
+.manual-btn{
+  border:2px solid #40D3DC;
+  padding:5px;
+  border-radius:10px;
+  cursor:pointer;
+  transition:1s;
+}
+
+.manual-btn:not(:last-child){
+  margin-right:40px;
+}
+
+.manual-btn:hover{
+  background: aqua;
+}
+
+#radio1:checked ~ .first{
+  margin-left:0;
+}
+
+#radio2:checked ~ .first{
+  margin-left:-209.5%;
+}
+
+@media screen and (max-width: 1280px) {
+  body {
+    background:  ;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .navigation-manual{
+    top: 437px;
+    left: 207px;
+    width: 4px;
+  }
+  body{
+    margin: 10px 13px 10px 13px;
+  }
+  .unordered-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    padding-top: 8px;
+  }
+  .unordered-list a {
+    font-size: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 21px;
+  }
+}
